@@ -6,6 +6,8 @@ const RwaModel=require('./Model/RWAModel');
 const app=express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+let port = process.env.port || 8080;
+
 
 app.use(function (error,req,res,next) {
 
@@ -51,7 +53,7 @@ app.get('/get_societies',function (req,res) {
     })
 });
 
-app.listen(4000, function () {
+app.listen(port, function () {
     console.log('upload app listening on port 8080!');
 
 });
